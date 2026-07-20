@@ -1,0 +1,36 @@
+{
+  "name": "jsp-site",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint app --ext .js,.jsx,.ts,.tsx",
+    "typecheck": "tsc --noEmit",
+    "audit": "node scripts/audit.mjs"
+  },
+  "dependencies": {
+    "@fontsource/cormorant-garamond": "5.3.0",
+    "@fontsource/instrument-sans": "5.3.0",
+    "framer-motion": "12.42.2",
+    "next": "15.5.20",
+    "react": "19.1.8",
+    "react-dom": "19.1.8"
+  },
+  "devDependencies": {
+    "@types/node": "22.20.1",
+    "@types/react": "19.2.17",
+    "@types/react-dom": "19.2.3",
+    "autoprefixer": "10.5.4",
+    "eslint": "8.57.1",
+    "eslint-config-next": "15.5.20",
+    "postcss": "8.5.20",
+    "tailwindcss": "3.4.19",
+    "typescript": "5.9.3"
+  },
+  "engines": {
+    "node": ">=20.9.0 <25"
+  },
+  "packageManager": "npm@11.11.0"
+}
