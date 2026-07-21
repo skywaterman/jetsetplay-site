@@ -1,5 +1,6 @@
-import { StaticBoard } from "@/components/board/StaticBoard";
+import { BoardFace } from "@/components/board/BoardFace";
 import { PageShell } from "@/components/site/PageShell";
+import { HOUSE_BOARD_COLORWAYS } from "@/lib/board-face";
 import { SITE_COPY } from "@/lib/site-copy";
 
 export default function YourProposalPage() {
@@ -38,7 +39,12 @@ export default function YourProposalPage() {
           </form>
         </div>
         <div className="proposal-studio__stage">
-          <StaticBoard className="static-board--proposal" />
+          <BoardFace
+            brand={HOUSE_BOARD_COLORWAYS.salonOxblood}
+            className="board-face--proposal"
+            decorative={false}
+            variant="house"
+          />
           <p className="proposal-empty" data-copy-id="proposal.empty">
             {SITE_COPY.proposal.empty}
           </p>

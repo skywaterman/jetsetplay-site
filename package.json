@@ -9,12 +9,13 @@
     "lint": "eslint app components lib --ext .js,.jsx,.ts,.tsx",
     "typecheck": "tsc --noEmit",
     "audit": "node scripts/audit.mjs",
+    "audit:board": "node scripts/audit-board.mjs",
+    "evidence:board": "node scripts/render-board-evidence.mjs",
     "generate:wordmark": "node scripts/generate-wordmark.mjs public/brand/jetsetplay-wordmark.svg"
   },
   "dependencies": {
     "@fontsource/cormorant-garamond": "5.3.0",
     "@fontsource/instrument-sans": "5.3.0",
-    "framer-motion": "12.42.2",
     "next": "15.5.20",
     "react": "19.1.8",
     "react-dom": "19.1.8"
@@ -28,6 +29,7 @@
     "eslint-config-next": "15.5.20",
     "fontkit": "2.0.4",
     "postcss": "8.5.20",
+    "sharp": "0.34.5",
     "tailwindcss": "3.4.19",
     "typescript": "5.9.3"
   },

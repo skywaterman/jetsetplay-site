@@ -1,4 +1,4 @@
-import { StaticBoard } from "@/components/board/StaticBoard";
+import { HomeBoardRecolor } from "@/components/board/HomeBoardRecolor";
 import { ActionLink } from "@/components/site/ActionLink";
 import { PageShell } from "@/components/site/PageShell";
 import { SITE_COPY } from "@/lib/site-copy";
@@ -44,9 +44,7 @@ export default function HomePage() {
             </ActionLink>
           </div>
         </div>
-        <div className="home-hero__board">
-          <StaticBoard />
-        </div>
+        <HomeBoardRecolor />
       </section>
 
       <section className="home-thesis">

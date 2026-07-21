@@ -21,9 +21,14 @@
   --type-h3: clamp(1.75rem, 1.35rem + 1.3vw, 2.75rem);
   --type-h2: clamp(2.5rem, 1.7rem + 3vw, 5rem);
   --type-h1: clamp(3.5rem, 2rem + 6vw, 7.5rem);
-  --board-dark: var(--jsp-ink);
-  --board-field: var(--material-felt);
-  --board-light: var(--jsp-cream);
+  --brand-primary: var(--jsp-ink);
+  --brand-secondary: var(--jsp-cream);
+  --brand-field: var(--material-felt);
+  --brand-name: "JetSetPlay";
+  --brand-motif: "Pip";
+  --board-dark: var(--brand-primary);
+  --board-field: var(--brand-field);
+  --board-light: var(--brand-secondary);
 }
 
 * {
@@ -252,7 +257,7 @@ svg {
   gap: 1rem 2.25rem;
 }
 
-.static-board {
+.board-face {
   aspect-ratio: 2000 / 1406;
   height: auto;
   width: 100%;
@@ -615,8 +620,7 @@ svg {
   padding: clamp(3rem, 7vw, 8rem);
 }
 
-.static-board--proposal {
-  --board-field: var(--material-oxblood);
+.board-face--proposal {
   max-width: 52rem;
 }
 
