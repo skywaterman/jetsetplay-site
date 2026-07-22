@@ -82,6 +82,8 @@ export const SITE_COPY = {
   proposal: {
     h1: "Your brand. On the board. In ninety seconds.",
     sub: "Tell us who the gift is for. The studio engine drafts a concept in your brand's own language: colors, marks, materials, and the note that goes in the box.",
+    thoughtfulness:
+      "Every set can carry each recipient's own detail. Our Thoughtfulness Layer maps who they are so the gift lands like you knew them.",
     fields: {
       brand: "Your brand",
       recipient: "Who receives it",

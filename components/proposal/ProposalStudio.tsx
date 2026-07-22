@@ -571,6 +571,9 @@ export function ProposalStudio() {
         <p className="proposal-studio__sub" data-copy-id="proposal.sub">
           {SITE_COPY.proposal.sub}
         </p>
+        <p className="proposal-studio__thoughtfulness">
+          {SITE_COPY.proposal.thoughtfulness}
+        </p>
         <form
           className="proposal-form"
           data-netlify="true"
@@ -686,6 +689,14 @@ export function ProposalStudio() {
           />
         </m.div>
 
+        <div aria-hidden="true" className="proposal-materials">
+          <span />
+          <span />
+          <span />
+          <span />
+          <span />
+        </div>
+
         {state === "loading" ? (
           <progress
             aria-label={SITE_COPY.proposal.loading}
@@ -713,6 +724,11 @@ export function ProposalStudio() {
               <h1>{proposal.title}</h1>
               <p className="proposal-output__thesis">{proposal.thesis}</p>
             </header>
+            <div aria-hidden="true" className="proposal-output__palette">
+              <span style={{ background: proposal.palette.dark }} />
+              <span style={{ background: proposal.palette.field }} />
+              <span style={{ background: proposal.palette.light }} />
+            </div>
             <p className="proposal-output__concept">{proposal.concept}</p>
             <ul className="proposal-output__materials">
               {proposal.materials.map((material) => (
