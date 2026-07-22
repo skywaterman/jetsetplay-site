@@ -1,9 +1,15 @@
 .next/
 node_modules/
-.env.local
+.env*
+!.env.example
 .vercel/
 coverage/
 playwright-report/
 test-results/
+cache/
+__pycache__/
+*.py[cod]
+outputs/evidence/phase-4/catalogue-requests.ndjson
+outputs/evidence/phase-4/proposal-runs.ndjson
 .DS_Store
 *.tsbuildinfo

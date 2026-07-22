@@ -1,0 +1,83 @@
+{
+  "capturedAt": "2026-07-22T16:27:27.138Z",
+  "endpoint": "http://127.0.0.1:3000/.netlify/functions/claude",
+  "eventTypes": [
+    "started",
+    "progress",
+    "progress",
+    "progress",
+    "progress",
+    "progress",
+    "progress",
+    "progress",
+    "progress",
+    "progress",
+    "progress",
+    "progress",
+    "progress",
+    "progress",
+    "progress",
+    "progress",
+    "progress",
+    "progress",
+    "progress",
+    "progress",
+    "progress",
+    "proposal",
+    "complete"
+  ],
+  "input": {
+    "brand": "Cobalt House",
+    "occasion": "Centennial dinner",
+    "recipient": "Selected clients"
+  },
+  "ledger": {
+    "eventTypes": [
+      "started",
+      "completed"
+    ],
+    "proposalSystemContextSha256": "d8bfdcc3cd56d709b1c7d1543774f3d3bf6afb0cba49be65a7ddb1e7833d3e95",
+    "recordCount": 2,
+    "schemaVersion": "proposal-run.v1"
+  },
+  "modelContract": "claude-sonnet-4-6",
+  "oneSheet": {
+    "bytes": 18380,
+    "sha256": "6cdb24b000ad3bdd2010ccda6260c5520b2d4257ccc7861326a64ef0c4bf1ff7"
+  },
+  "proofType": "credentialed-local-claude",
+  "proposal": {
+    "concept": "One hundred years demands a game equal to the weight. This backgammon set is built for Cobalt House's centennial dinner, designed to mark the occasion not with a souvenir but with something worth sitting down to. The board draws its palette directly from the Cobalt House identity: deep cobalt anchors the border and points, a refined field tone holds the ground, and a warm neutral lifts the alternating triangles. The Cobalt House wordmark rests on the open waist band, understated and permanent. Each set arrives in a debossed leather travel tube with solid brass hardware. Every piece is chosen to belong to the next century as readily as this one. The gift is not a commemoration.",
+    "materials": [
+      "Roll-up board in full-grain eco-leather, UV-printed in the Cobalt House colorway, debossed wordmark on the field. Board dimensions 9.5 x 13.5 inches flat.",
+      "Leather travel tube, 10.5 x 3 inches, in deep cobalt with tone-on-tone laser engraving and solid brass closure hardware.",
+      "24 resin playing pieces in two contrasting tones, solid brass doubling cube, and a weighted leather dice cup included in the set."
+    ],
+    "note": "A century is a rare thing to reach. This game was made to mark it, and to keep the Cobalt House name at the table long after tonight. May the next hundred years begin here.",
+    "palette": {
+      "dark": "#1B3A6B",
+      "field": "#2E5EA8",
+      "light": "#E8DEC8"
+    },
+    "thesis": "A hundred years of Cobalt House, designed into something worth playing for the next hundred.",
+    "title": "Cobalt House Centennial Backgammon Set",
+    "tldr": [
+      "A travel backgammon set built in the Cobalt House colorway, with the wordmark on the board and brass hardware on the tube.",
+      "Designed for the centennial dinner table: one set per selected client, placed before the room is seated, requiring no explanation.",
+      "The gift marks one hundred years and functions as a reason to gather again. It belongs to the next century as much as this one."
+    ],
+    "brandName": "Cobalt House",
+    "occasion": "Centennial dinner",
+    "recipient": "Selected clients",
+    "runId": "2da91f3e-2474-471c-b27f-76f7bb14eb4b",
+    "schemaVersion": "proposal.v1"
+  },
+  "response": {
+    "contentType": "application/x-ndjson; charset=utf-8",
+    "date": "Wed, 22 Jul 2026 16:27:27 GMT",
+    "requestId": null,
+    "status": 200
+  },
+  "runId": "2da91f3e-2474-471c-b27f-76f7bb14eb4b",
+  "schemaVersion": "phase-4-live-demo.v1"
+}

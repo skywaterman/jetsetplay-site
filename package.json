@@ -4,19 +4,33 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "prebuild": "node scripts/sync-proposal-context.mjs",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint app --ext .js,.jsx,.ts,.tsx",
+    "lint": "eslint app components lib server --ext .js,.jsx,.ts,.tsx",
     "typecheck": "tsc --noEmit",
-    "audit": "node scripts/audit.mjs"
+    "typecheck:proposal": "tsc -p tsconfig.proposal-server.json --noEmit",
+    "audit": "node scripts/audit.mjs",
+    "audit:board": "node scripts/audit-board.mjs",
+    "audit:phase5": "node scripts/audit-phase5.mjs",
+    "audit:secrets": "node scripts/audit-client-secrets.mjs",
+    "audit:proposal": "node scripts/audit-proposal-server.mjs",
+    "evidence:live-proposals": "node scripts/capture-live-proposal-demos.mjs",
+    "evidence:proposal-fixture": "node scripts/proposal-browser-fixture.mjs",
+    "evidence:board": "node scripts/render-board-evidence.mjs",
+    "generate:wordmark": "node scripts/generate-wordmark.mjs public/brand/jetsetplay-wordmark.svg",
+    "generate:og": "node scripts/generate-og.mjs"
   },
   "dependencies": {
-    "@fontsource/cormorant-garamond": "5.3.0",
-    "@fontsource/instrument-sans": "5.3.0",
+    "@fontsource-variable/cormorant-garamond": "5.3.0",
+    "@fontsource-variable/instrument-sans": "5.3.0",
+    "@vercel/blob": "2.6.1",
+    "@vercel/firewall": "1.2.1",
     "framer-motion": "12.42.2",
     "next": "15.5.20",
     "react": "19.1.8",
-    "react-dom": "19.1.8"
+    "react-dom": "19.1.8",
+    "zod": "4.4.3"
   },
   "devDependencies": {
     "@types/node": "22.20.1",
@@ -25,12 +39,18 @@
     "autoprefixer": "10.5.4",
     "eslint": "8.57.1",
     "eslint-config-next": "15.5.20",
+    "fontkit": "2.0.4",
     "postcss": "8.5.20",
+    "sharp": "0.35.3",
     "tailwindcss": "3.4.19",
     "typescript": "5.9.3"
   },
   "engines": {
     "node": ">=20.9.0 <25"
+  },
+  "overrides": {
+    "postcss": "8.5.20",
+    "sharp": "0.35.3"
   },
   "packageManager": "npm@11.11.0"
 }

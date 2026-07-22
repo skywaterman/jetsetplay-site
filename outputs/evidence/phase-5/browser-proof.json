@@ -1,0 +1,180 @@
+{
+  "capturedAt": "2026-07-22T15:27:09Z",
+  "pages": [
+    {
+      "slug": "home",
+      "width": 1440,
+      "metrics": {
+        "h1": 1,
+        "ogImage": "https://jetsetplay.co/og.png",
+        "scrollY": 0,
+        "title": "JetSetPlay · Games designed to be gifted.™",
+        "viewport": 1440,
+        "width": 1440
+      },
+      "errors": 0
+    },
+    {
+      "slug": "work",
+      "width": 1440,
+      "metrics": {
+        "h1": 1,
+        "ogImage": "https://jetsetplay.co/og.png",
+        "scrollY": 0,
+        "title": "JetSetPlay · Games designed to be gifted.™",
+        "viewport": 1440,
+        "width": 1440
+      },
+      "errors": 0
+    },
+    {
+      "slug": "games",
+      "width": 1440,
+      "metrics": {
+        "h1": 1,
+        "ogImage": "https://jetsetplay.co/og.png",
+        "scrollY": 0,
+        "title": "JetSetPlay · Games designed to be gifted.™",
+        "viewport": 1440,
+        "width": 1440
+      },
+      "errors": 0
+    },
+    {
+      "slug": "your-proposal",
+      "width": 1440,
+      "metrics": {
+        "h1": 1,
+        "ogImage": "https://jetsetplay.co/og.png",
+        "scrollY": 0,
+        "title": "JetSetPlay · Games designed to be gifted.™",
+        "viewport": 1440,
+        "width": 1440
+      },
+      "errors": 0
+    },
+    {
+      "slug": "commission",
+      "width": 1440,
+      "metrics": {
+        "h1": 1,
+        "ogImage": "https://jetsetplay.co/og.png",
+        "scrollY": 0,
+        "title": "JetSetPlay · Games designed to be gifted.™",
+        "viewport": 1440,
+        "width": 1440
+      },
+      "errors": 0
+    },
+    {
+      "slug": "home",
+      "width": 375,
+      "metrics": {
+        "h1": 1,
+        "ogImage": "https://jetsetplay.co/og.png",
+        "scrollY": 0,
+        "title": "JetSetPlay · Games designed to be gifted.™",
+        "viewport": 375,
+        "width": 375
+      },
+      "errors": 0
+    },
+    {
+      "slug": "work",
+      "width": 375,
+      "metrics": {
+        "h1": 1,
+        "ogImage": "https://jetsetplay.co/og.png",
+        "scrollY": 0,
+        "title": "JetSetPlay · Games designed to be gifted.™",
+        "viewport": 375,
+        "width": 375
+      },
+      "errors": 0
+    },
+    {
+      "slug": "games",
+      "width": 375,
+      "metrics": {
+        "h1": 1,
+        "ogImage": "https://jetsetplay.co/og.png",
+        "scrollY": 0,
+        "title": "JetSetPlay · Games designed to be gifted.™",
+        "viewport": 375,
+        "width": 375
+      },
+      "errors": 0
+    },
+    {
+      "slug": "your-proposal",
+      "width": 375,
+      "metrics": {
+        "h1": 1,
+        "ogImage": "https://jetsetplay.co/og.png",
+        "scrollY": 0,
+        "title": "JetSetPlay · Games designed to be gifted.™",
+        "viewport": 375,
+        "width": 375
+      },
+      "errors": 0
+    },
+    {
+      "slug": "commission",
+      "width": 375,
+      "metrics": {
+        "h1": 1,
+        "ogImage": "https://jetsetplay.co/og.png",
+        "scrollY": 0,
+        "title": "JetSetPlay · Games designed to be gifted.™",
+        "viewport": 375,
+        "width": 375
+      },
+      "errors": 0
+    }
+  ],
+  "focus": {
+    "outlineColor": "rgb(245, 241, 232)",
+    "outlineStyle": "solid",
+    "outlineWidth": "2px",
+    "target": "Your brand input after keyboard Tab"
+  },
+  "proposalInteractions": {
+    "error": {
+      "background": "rgb(90, 32, 48)",
+      "focusedRecoveryMessage": true,
+      "state": "error",
+      "width": 375
+    },
+    "success": [
+      {
+        "brand": "Cobalt House",
+        "focusedResult": true,
+        "h1": 1,
+        "publicSignalMentions": 0,
+        "scrollY": 0,
+        "siteChromeVisible": false,
+        "width": 375
+      },
+      {
+        "brand": "Northstar",
+        "boardAlignedWithResult": true,
+        "focusedResult": true,
+        "h1": 1,
+        "scrollY": 0,
+        "siteChromeVisible": false,
+        "width": 1440
+      }
+    ]
+  },
+  "reducedMotionSource": "Framer Motion useReducedMotion disables entrances and the CSS media query freezes remaining transitions",
+  "screenshots": {
+    "mode": "viewport",
+    "widths": [
+      375,
+      1440
+    ],
+    "height": 1000,
+    "mobileHeight": 812,
+    "scrollY": 0
+  }
+}

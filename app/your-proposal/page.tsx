@@ -1,3 +1,10 @@
+import { ProposalStudio } from "@/components/proposal/ProposalStudio";
+import { PageShell } from "@/components/site/PageShell";
+
 export default function YourProposalPage() {
-  return <main className="min-h-screen bg-cream text-ink" />;
+  return (
+    <PageShell current="proposal">
+      <ProposalStudio />
+    </PageShell>
+  );
 }

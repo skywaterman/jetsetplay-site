@@ -1,0 +1,84 @@
+{
+  "capturedAt": "2026-07-22T16:27:27.138Z",
+  "endpoint": "http://127.0.0.1:3000/.netlify/functions/claude",
+  "eventTypes": [
+    "started",
+    "progress",
+    "progress",
+    "progress",
+    "progress",
+    "progress",
+    "progress",
+    "progress",
+    "progress",
+    "progress",
+    "progress",
+    "progress",
+    "progress",
+    "progress",
+    "progress",
+    "progress",
+    "progress",
+    "progress",
+    "progress",
+    "progress",
+    "progress",
+    "progress",
+    "proposal",
+    "complete"
+  ],
+  "input": {
+    "brand": "Northstar",
+    "occasion": "Annual retreat",
+    "recipient": "Leadership team"
+  },
+  "ledger": {
+    "eventTypes": [
+      "started",
+      "completed"
+    ],
+    "proposalSystemContextSha256": "d8bfdcc3cd56d709b1c7d1543774f3d3bf6afb0cba49be65a7ddb1e7833d3e95",
+    "recordCount": 2,
+    "schemaVersion": "proposal-run.v1"
+  },
+  "modelContract": "claude-sonnet-4-6",
+  "oneSheet": {
+    "bytes": 16772,
+    "sha256": "226539634d046647b0b476ca27b4659fc8b518b2e4a3e514b88a63ebd34b4ab4"
+  },
+  "proofType": "credentialed-local-claude",
+  "proposal": {
+    "concept": "Northstar names something leaders already trust: the fixed point that orients every decision, every course correction, every late-night call about what the company actually stands for. This set turns that orientation into a shared ritual. A roll-up backgammon board in deep navy, warm gold, and clean white carries the Northstar wordmark across the open waist band in a single, unhurried line. The game is deliberately paired, always requiring two people, always requiring a read of the board, always requiring a move. Around the retreat table it becomes the thing that happens after the agenda ends and the real conversation begins.",
+    "materials": [
+      "Roll-up board in full-grain PU leather, deep navy ground with warm gold and clean white points, Northstar wordmark debossed across the center waist band in tone-on-tone.",
+      "Solid brass hardware throughout: precision dice, doubling cube, and checker sets finished in brass and ivory, seated in a molded insert inside a rigid two-piece gift box with ribbon pull.",
+      "Laser-engraved leather tube in matching navy, carrying the Northstar name vertically along the side, fitted with a brushed brass end cap and ribbon pull tab."
+    ],
+    "note": "You navigate by the same star, wherever the year takes you. This set is a reminder of that, and an invitation to keep playing the long game together.",
+    "palette": {
+      "dark": "#1B2A4A",
+      "field": "#2E3F60",
+      "light": "#F2D070"
+    },
+    "thesis": "A game for leaders who already know where they are going and know they will need each other to get there.",
+    "title": "Northstar · Annual Retreat Set",
+    "tldr": [
+      "A luxury roll-up backgammon set in deep navy and warm gold, built around the Northstar name and designed to travel well beyond the retreat.",
+      "The game pairs two people, starts real conversations, and keeps the brand present in every room a leader enters for the next twelve months.",
+      "Solid brass hardware, full-grain leather, debossed wordmark: a set that reads as considered because it was."
+    ],
+    "brandName": "Northstar",
+    "occasion": "Annual retreat",
+    "recipient": "Leadership team",
+    "runId": "e1dc0078-4fb9-4b88-ab1c-349d79a892f7",
+    "schemaVersion": "proposal.v1"
+  },
+  "response": {
+    "contentType": "application/x-ndjson; charset=utf-8",
+    "date": "Wed, 22 Jul 2026 16:28:02 GMT",
+    "requestId": null,
+    "status": 200
+  },
+  "runId": "e1dc0078-4fb9-4b88-ab1c-349d79a892f7",
+  "schemaVersion": "phase-4-live-demo.v1"
+}
