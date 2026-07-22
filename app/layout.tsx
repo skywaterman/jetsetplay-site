@@ -1,6 +1,7 @@
 import "@fontsource-variable/cormorant-garamond";
 import "@fontsource-variable/instrument-sans";
 import "./globals.css";
+import "./editorial.css";
 import type { Metadata } from "next";
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://jetsetplay.co";

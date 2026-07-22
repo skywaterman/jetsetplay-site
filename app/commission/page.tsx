@@ -1,32 +1,43 @@
+import Image from "next/image";
 import { PageShell } from "@/components/site/PageShell";
 import { SITE_COPY } from "@/lib/site-copy";
 
 const processSteps = [
-  ["signal", SITE_COPY.commission.signal],
-  ["design", SITE_COPY.commission.design],
-  ["craft", SITE_COPY.commission.craft],
-  ["dispatch", SITE_COPY.commission.dispatch],
+  ["signal", SITE_COPY.commission.signal, "/editorial/personalization.jpg"],
+  ["design", SITE_COPY.commission.design, "/editorial/studio-materials.jpg"],
+  ["craft", SITE_COPY.commission.craft, "/editorial/backgammon-clutch.jpg"],
+  ["dispatch", SITE_COPY.commission.dispatch, "/editorial/dossier-cards.jpg"],
 ] as const;
 
 export default function CommissionPage() {
   return (
     <PageShell current="commission">
       <section className="page-intro page-intro--commission">
-        <h1 className="page-title" data-copy-id="commission.h1">
-          {SITE_COPY.commission.h1}
-        </h1>
+        <div className="page-intro__copy">
+          <h1 className="page-title" data-copy-id="commission.h1">
+            {SITE_COPY.commission.h1}
+          </h1>
+        </div>
+        <div className="commission-intro__image">
+          <Image alt="" fill priority sizes="(max-width: 800px) 100vw, 55vw" src="/editorial/studio-materials.jpg" />
+        </div>
       </section>
       <section className="process-ledger">
-        {processSteps.map(([key, text]) => {
+        {processSteps.map(([key, text, image]) => {
           const divider = text.indexOf(". ");
           const name = text.slice(0, divider + 1);
           const body = text.slice(divider + 2);
 
           return (
-            <p className="process-ledger__row" data-copy-id={`commission.${key}`} key={key}>
-              <span className="process-ledger__name">{name}</span>{" "}
-              <span className="process-ledger__body">{body}</span>
-            </p>
+            <article className="process-ledger__row" key={key}>
+              <div className="process-ledger__image">
+                <Image alt="" fill sizes="(max-width: 800px) 100vw, 30vw" src={image} />
+              </div>
+              <p data-copy-id={`commission.${key}`}>
+                <span className="process-ledger__name">{name}</span>{" "}
+                <span className="process-ledger__body">{body}</span>
+              </p>
+            </article>
           );
         })}
       </section>

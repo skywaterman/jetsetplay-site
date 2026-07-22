@@ -1,14 +1,15 @@
+import Image from "next/image";
 import { HomeBoardRecolor } from "@/components/board/HomeBoardRecolor";
 import { ActionLink } from "@/components/site/ActionLink";
 import { PageShell } from "@/components/site/PageShell";
 import { SITE_COPY } from "@/lib/site-copy";
 
 const houseItems = [
-  ["backgammon", SITE_COPY.home.house.backgammon],
-  ["talisman", SITE_COPY.home.house.talisman],
-  ["clack", SITE_COPY.home.house.clack],
-  ["dossier", SITE_COPY.home.house.dossier],
-  ["minis", SITE_COPY.home.house.minis],
+  ["backgammon", SITE_COPY.home.house.backgammon, "/editorial/backgammon-clutch.jpg"],
+  ["talisman", SITE_COPY.home.house.talisman, "/editorial/talisman-dominoes.jpg"],
+  ["clack", SITE_COPY.home.house.clack, "/editorial/clack-mahjong.jpg"],
+  ["dossier", SITE_COPY.home.house.dossier, "/editorial/dossier-cards.jpg"],
+  ["minis", SITE_COPY.home.house.minis, "/editorial/personalization.jpg"],
 ] as const;
 
 const soulTitleParts = SITE_COPY.home.soul.h2.split(" · ");
@@ -44,7 +45,15 @@ export default function HomePage() {
             </ActionLink>
           </div>
         </div>
-        <HomeBoardRecolor />
+        <div className="home-hero__theatre">
+          <HomeBoardRecolor />
+          <div aria-hidden="true" className="home-hero__pieces">
+            <span />
+            <span />
+            <span />
+            <span />
+          </div>
+        </div>
       </section>
 
       <section className="home-thesis">
@@ -67,17 +76,22 @@ export default function HomePage() {
             {SITE_COPY.home.house.h2}
           </h2>
         </header>
-        <div className="house-ledger">
-          {houseItems.map(([key, text]) => {
+        <div className="house-gallery">
+          {houseItems.map(([key, text, image]) => {
             const divider = text.indexOf(". ");
             const lead = text.slice(0, divider + 1);
             const body = text.slice(divider + 2);
 
             return (
-              <p className="house-ledger__row" data-copy-id={`home.house.${key}`} key={key}>
-                <span className="house-ledger__name">{lead}</span>{" "}
-                <span className="house-ledger__body">{body}</span>
-              </p>
+              <article className={`house-card house-card--${key}`} key={key}>
+                <div className="house-card__image">
+                  <Image alt="" fill sizes="(max-width: 800px) 100vw, 50vw" src={image} />
+                </div>
+                <p className="house-card__copy" data-copy-id={`home.house.${key}`}>
+                  <span className="house-card__name">{lead}</span>{" "}
+                  <span className="house-card__body">{body}</span>
+                </p>
+              </article>
             );
           })}
         </div>
@@ -93,6 +107,9 @@ export default function HomePage() {
       </section>
 
       <section className="home-soul">
+        <div aria-hidden="true" className="home-soul__board">
+          <Image alt="" fill sizes="(max-width: 800px) 100vw, 42vw" src="/editorial/personalization.jpg" />
+        </div>
         <h2 className="section-title" data-copy-id="home.soul.h2">
           {soulTitleParts.map((part, index) => (
             <span className="phrase-lock" key={part}>
