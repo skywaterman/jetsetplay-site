@@ -1,0 +1,30 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "services": {
+    "site": {
+      "bindings": [
+        {
+          "env": "PDF_RENDERER_URL",
+          "format": "url",
+          "service": "pdf_renderer",
+          "type": "service"
+        }
+      ],
+      "framework": "nextjs",
+      "root": "."
+    },
+    "pdf_renderer": {
+      "entrypoint": "Dockerfile.vercel",
+      "root": "services/pdf-renderer/",
+      "runtime": "container"
+    }
+  },
+  "rewrites": [
+    {
+      "destination": {
+        "service": "site"
+      },
+      "source": "/(.*)"
+    }
+  ]
+}

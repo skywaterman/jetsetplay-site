@@ -1,0 +1,49 @@
+{
+  "boardSkins": [
+    {
+      "brand": "Cobalt House",
+      "dark": "#18233F",
+      "field": "#6E86A6",
+      "light": "#F3EEDD",
+      "viewport": "1440x1100"
+    },
+    {
+      "brand": "Northstar",
+      "dark": "#173E2C",
+      "field": "#78927E",
+      "light": "#F5F1E8",
+      "viewport": "375x812"
+    }
+  ],
+  "catalogueCapture": {
+    "emailExcludedFromProposalLedger": true,
+    "separateLedger": "catalogue-requests"
+  },
+  "pdf": {
+    "format": "PDF 1.7",
+    "pageSize": "A4",
+    "pages": 1,
+    "producer": "WeasyPrint 69.0"
+  },
+  "proposalRoute": {
+    "globalLimit": {
+      "afterValidInput": true,
+      "maximum": 120,
+      "retryAfterSeconds": 3600,
+      "windowSeconds": 3600
+    },
+    "missingKeyStatus": 503,
+    "rateLimitAttempt": 4,
+    "rateLimitStatus": 429,
+    "retryAfterSeconds": 900,
+    "sourcePath": "/.netlify/functions/claude"
+  },
+  "proposalUi": {
+    "catalogueEmailLabelVisible": true,
+    "oneSheetErrorVisible": true,
+    "readyResultH1Count": 1,
+    "readyResultJspChromeVisible": false
+  },
+  "proofType": "local-contract",
+  "schemaVersion": "phase-4-proof.v1"
+}

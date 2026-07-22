@@ -25,6 +25,10 @@ const contractSource = await readFile(
   path.join(root, "lib/board-face.ts"),
   "utf8",
 );
+const globalStyles = await readFile(
+  path.join(root, "app/globals.css"),
+  "utf8",
+);
 
 function assert(condition, message) {
   if (!condition) {
@@ -167,6 +171,12 @@ assert(
 assert(home.includes("--brand-field:#173D32"), "SSR field fallback must be felt");
 assert(home.includes("--brand-primary:#1A1A1A"), "SSR dark fallback must be ink");
 assert(proposalBoard.includes("--brand-field:#5A2030"), "Proposal study must use oxblood");
+assert(
+  /\.board-face\s*\{[^}]*--board-dark:\s*var\(--brand-primary\);[^}]*--board-field:\s*var\(--brand-field\);[^}]*--board-light:\s*var\(--brand-secondary\);[^}]*\}/su.test(
+    globalStyles,
+  ),
+  "Each board must resolve its palette from local brand tokens",
+);
 const { BoardFace, homeBoardFieldAtScroll } = executableBoardModule();
 const clientFixture = {
   field: "#315B53",

@@ -1,12 +1,37 @@
-# JSP SITE HANDOFF · start here
-Total setup: about five minutes, then Claude Code does the rest.
+# JSP final site
 
-1. Unzip this folder anywhere on your machine. Rename it jsp-site if you like.
-2. Install Claude Code (once): npm install -g @anthropic-ai/claude-code
-3. Copy .env.example to .env.local and paste your Anthropic API key in.
-4. In Terminal: cd into this folder and run: claude
-5. Paste Phase 1 from docs/KICKOFF_PROMPTS.md. Approve each phase before the next.
+The production JetSetPlay site is built in five canon-audited phases on `build/final-site`.
 
-Vercel (before Phase 5): push this folder to GitHub, import the repo at vercel.com, add ANTHROPIC_API_KEY in Vercel project settings.
+## Read first
 
-If you have the master JSP Canon CLAUDE.md, drop it in here as CLAUDE_MASTER.md. The included CLAUDE.md is the site-build law distilled from locked canon.
+1. `AGENTS.md`
+2. `docs/SITE_BUILD_LAW.md`
+3. `docs/BUILD_AND_COPY.md`
+4. `docs/MANIFESTO.md`
+5. `docs/CODEX_DISPATCH.md`
+
+## Local verification
+
+Install the locked dependencies, then run the complete local gate:
+
+```sh
+npm ci
+npm run typecheck
+npm run typecheck:proposal
+npm run lint
+npm run audit
+npm run audit:board
+npm run audit:proposal
+npm run build
+npm run audit:phase5
+ANTHROPIC_API_KEY=jsp-audit-anthropic-canary PDF_RENDERER_SECRET=jsp-audit-renderer-canary npm run audit:secrets
+npm audit --omit=dev --audit-level=high
+```
+
+The live proposal engine also requires two credentialed Claude runs before Phase 4 can close. Keep `ANTHROPIC_API_KEY` and `PDF_RENDERER_SECRET` in `.env.local`. Never use a `NEXT_PUBLIC_` prefix.
+
+## Publishing
+
+The complete GitHub, Vercel Services, private PDF renderer, Blob ledger, secret, firewall, and production verification instructions are in `docs/DEPLOYMENT.md`.
+
+The public proposal endpoint remains `/.netlify/functions/claude`. This compatibility contract must not be renamed.

@@ -1,0 +1,15 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "incremental": false
+  },
+  "include": [
+    "next-env.d.ts",
+    "app/api/proposal/**/*.ts",
+    "lib/proposal.ts",
+    "lib/proposal/types.ts",
+    "server/generated/proposal-system-context.ts",
+    "server/proposal/**/*.ts"
+  ],
+  "exclude": ["node_modules"]
+}

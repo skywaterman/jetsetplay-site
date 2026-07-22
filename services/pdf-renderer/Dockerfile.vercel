@@ -1,0 +1,43 @@
+FROM python:3.12.13-slim-bookworm@sha256:d50fb7611f86d04a3b0471b46d7557818d88983fc3136726336b2a4c657aa30b AS runtime-base
+
+ENV PYTHONDONTWRITEBYTECODE=1 \
+    PYTHONUNBUFFERED=1 \
+    PORT=80
+
+RUN apt-get update \
+    && apt-get install -y --no-install-recommends \
+        libharfbuzz-subset0 \
+        libpango-1.0-0 \
+        libpangoft2-1.0-0 \
+        fonts-dejavu-core \
+        fonts-noto-cjk \
+    && rm -rf /var/lib/apt/lists/*
+
+WORKDIR /app
+
+COPY requirements.txt ./
+RUN python -m pip install --no-cache-dir --disable-pip-version-check -r requirements.txt \
+    && python -m pip check \
+    && python -c "import sys, weasyprint; assert sys.version_info[:3] == (3, 12, 13); assert weasyprint.__version__ == '69.0'"
+
+FROM runtime-base AS verify
+
+COPY renderer.py server.py ./
+COPY fonts/ ./fonts/
+COPY tests/ ./tests/
+
+RUN python -m unittest discover -s tests -v
+
+FROM runtime-base AS runtime
+
+RUN groupadd --system renderer \
+    && useradd --system --uid 10001 --gid renderer --home-dir /app renderer
+
+COPY --chown=renderer:renderer renderer.py server.py ./
+COPY --chown=renderer:renderer fonts/ ./fonts/
+
+USER renderer
+
+EXPOSE 80
+
+CMD ["python", "server.py"]

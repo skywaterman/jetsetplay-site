@@ -9,14 +9,31 @@ const expectedRoutes = [
   "app/work/page.tsx",
   "app/your-proposal/page.tsx",
 ];
-const auditedRoots = ["app", "components", "lib"];
+const auditedRoots = ["app", "components", "lib", "server/proposal"];
 const auditedFiles = [
   ".eslintrc.json",
   "next.config.ts",
   "package.json",
   "postcss.config.mjs",
+  "scripts/audit-proposal-server.mjs",
+  "scripts/audit-client-secrets.mjs",
+  "scripts/audit-phase5.mjs",
+  "scripts/capture-live-proposal-demos.mjs",
+  "scripts/proposal-browser-fixture.mjs",
+  "scripts/sync-proposal-context.mjs",
+  "services/pdf-renderer/.dockerignore",
+  "services/pdf-renderer/Dockerfile.vercel",
+  "services/pdf-renderer/README.md",
+  "services/pdf-renderer/build_fonts.py",
+  "services/pdf-renderer/renderer.py",
+  "services/pdf-renderer/requirements.txt",
+  "services/pdf-renderer/server.py",
+  "services/pdf-renderer/tests/test_http.py",
+  "services/pdf-renderer/tests/test_renderer.py",
   "tailwind.config.ts",
   "tsconfig.json",
+  "tsconfig.proposal-server.json",
+  "vercel.json",
 ];
 const forbidden = [
   { label: "en dash", pattern: /\u2013/u },
@@ -24,6 +41,24 @@ const forbidden = [
   { label: "placeholder note", pattern: /TODO/iu },
   { label: "sample filler", pattern: /lorem ipsum/iu },
 ];
+const repositoryTextExtensions = new Set([
+  ".css",
+  ".env",
+  ".example",
+  ".html",
+  ".js",
+  ".json",
+  ".md",
+  ".mjs",
+  ".py",
+  ".toml",
+  ".ts",
+  ".tsx",
+  ".txt",
+  ".yaml",
+  ".yml",
+]);
+const ignoredRepositoryDirectories = new Set([".git", ".next", "node_modules"]);
 const expectedCopy = [
   "Home",
   "Work",
@@ -78,6 +113,10 @@ const expectedCopy = [
   "The board did not set. Check your entries and try again.",
   "Proposed by JetSetPlay.",
   "Make it real",
+  "Get the custom catalogue.",
+  "Email",
+  "One-sheet",
+  "TL;DR",
   "Four moves to a gift they keep.",
   "Signal. We study who you are and who this is for. The gift begins as listening.",
   "Design. Designed from your brand. Never decorated with it. Proofed to the millimeter.",
@@ -107,6 +146,36 @@ async function walk(directory) {
   return files;
 }
 
+async function walkRepositoryText(directory = ".") {
+  const entries = await readdir(path.join(root, directory), {
+    withFileTypes: true,
+  });
+  const files = [];
+
+  for (const entry of entries) {
+    if (entry.isDirectory() && ignoredRepositoryDirectories.has(entry.name)) {
+      continue;
+    }
+
+    const relative = path.join(directory, entry.name);
+
+    if (entry.isDirectory()) {
+      files.push(...(await walkRepositoryText(relative)));
+      continue;
+    }
+
+    if (entry.name === ".env.local") {
+      continue;
+    }
+
+    if (repositoryTextExtensions.has(path.extname(entry.name))) {
+      files.push(relative);
+    }
+  }
+
+  return files;
+}
+
 const sourceFiles = (
   await Promise.all(auditedRoots.map((directory) => walk(directory)))
 ).flat();
@@ -122,6 +191,16 @@ for (const file of [...sourceFiles, ...auditedFiles]) {
   const contents = await readFile(path.join(root, file), "utf8");
 
   for (const rule of forbidden) {
+    if (rule.pattern.test(contents)) {
+      throw new Error(`${rule.label} found in ${file}`);
+    }
+  }
+}
+
+for (const file of await walkRepositoryText()) {
+  const contents = await readFile(path.join(root, file), "utf8");
+
+  for (const rule of forbidden.slice(0, 2)) {
     if (rule.pattern.test(contents)) {
       throw new Error(`${rule.label} found in ${file}`);
     }

@@ -2,6 +2,7 @@ import type { ReactNode } from "react";
 import type { SiteRoute } from "@/lib/site-copy";
 import { SiteFooter } from "./SiteFooter";
 import { SiteHeader } from "./SiteHeader";
+import { PageReveal } from "./PageReveal";
 
 export function PageShell({
   children,
@@ -13,7 +14,9 @@ export function PageShell({
   return (
     <>
       <SiteHeader current={current} />
-      <main className="min-h-screen">{children}</main>
+      <main className="min-h-screen">
+        <PageReveal>{children}</PageReveal>
+      </main>
       <SiteFooter />
     </>
   );
