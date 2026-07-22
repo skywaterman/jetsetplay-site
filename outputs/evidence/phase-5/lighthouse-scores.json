@@ -1,0 +1,22 @@
+{
+  "capturedAt": "2026-07-22T16:00:35Z",
+  "lighthouseVersion": "13.4.1",
+  "desktop": {
+    "accessibility": 100,
+    "bestPractices": 100,
+    "cumulativeLayoutShift": 0.012,
+    "largestContentfulPaintSeconds": 0.5,
+    "performance": 100,
+    "totalBlockingTimeMilliseconds": 0,
+    "viewport": "1440x1000"
+  },
+  "mobile": {
+    "accessibility": 100,
+    "bestPractices": 100,
+    "cumulativeLayoutShift": 0,
+    "largestContentfulPaintSeconds": 2.6,
+    "performance": 97,
+    "totalBlockingTimeMilliseconds": 50,
+    "viewport": "375x812"
+  }
+}
